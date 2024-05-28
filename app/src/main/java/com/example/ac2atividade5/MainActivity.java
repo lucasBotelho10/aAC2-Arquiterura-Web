@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ac2atividade5.adapter.AlunoAdapter;
 import com.example.ac2atividade5.api.AlunoService;
-import com.example.ac2atividade5.api.ApiClient;
+import com.example.ac2atividade5.api.APIClient;
 import com.example.ac2atividade5.model.Aluno;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -37,11 +37,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerUsuario = (RecyclerView) findViewById(R.id.recyclerUsuario);
         listaAlunos = new ArrayList<>();
         btnAdd = (FloatingActionButton)findViewById(R.id.btnAdd);
-        apiService = ApiClient.getUsuarioService();
+        apiService = APIClient.getUsuarioService();
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,cadastro_aluno.class);
+                Intent i = new Intent(MainActivity.this, cadastroAluno.class);
                 startActivity(i);
             }
         });

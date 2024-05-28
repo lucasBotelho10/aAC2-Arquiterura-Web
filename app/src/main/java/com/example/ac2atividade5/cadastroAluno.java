@@ -29,7 +29,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class cadastro_aluno extends AppCompatActivity {
+public class cadastroAluno extends AppCompatActivity {
 
     AlunoService apiService;
     private EditText TextNome, TextRA, TextCEP, TextLogradouro, TextComplemento,
@@ -107,7 +107,7 @@ public class cadastro_aluno extends AppCompatActivity {
             @Override
             public void onResponse(Call<Aluno> call, Response<Aluno> response) {
                 if(response.isSuccessful()){
-                    Toast.makeText(cadastro_aluno.this,"Aluno cadastrado com sucesso", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(cadastroAluno.this,"Aluno cadastrado com sucesso", Toast.LENGTH_SHORT).show();
                     finish();
                 }else{
                     Log.e("Inserir", "Erro ao criar: " + response.code());
@@ -129,7 +129,7 @@ public class cadastro_aluno extends AppCompatActivity {
                 if (response.isSuccessful()) {
 
                     Aluno createdPost = response.body();
-                    Toast.makeText(cadastro_aluno.this, "Inserido com sucesso!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(cadastroAluno.this, "Inserido com sucesso!", Toast.LENGTH_SHORT).show();
                     finish();
                 } else {
 
@@ -186,7 +186,7 @@ public class cadastro_aluno extends AppCompatActivity {
                     e.printStackTrace();
                 }
             } else {
-                Toast.makeText(cadastro_aluno.this, "Erro ao buscar endereço", Toast.LENGTH_SHORT).show();
+                Toast.makeText(cadastroAluno.this, "Erro ao buscar endereço", Toast.LENGTH_SHORT).show();
             }
         }
     }

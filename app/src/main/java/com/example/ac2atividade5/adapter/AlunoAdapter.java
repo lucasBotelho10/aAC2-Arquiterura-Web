@@ -5,19 +5,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ac2atividade5.ActivityAluno;
+import com.example.ac2atividade5.AlunoActivity;
 import com.example.ac2atividade5.R;
 import com.example.ac2atividade5.api.AlunoService;
-import com.example.ac2atividade5.api.ApiClient;
+import com.example.ac2atividade5.api.APIClient;
 import com.example.ac2atividade5.model.Aluno;
 
 import java.util.List;
@@ -38,7 +35,7 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.AlunoHolder>
 
     private void removerItem(int position) {
         String id = Alunos.get(position).getRa();
-        AlunoService apiService = ApiClient.getUsuarioService();
+        AlunoService apiService = APIClient.getUsuarioService();
         Call<Void> call = apiService.deleteAluno(Integer.parseInt(String.valueOf(id)));
         call.enqueue(new Callback<Void>() {
 
@@ -67,7 +64,7 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.AlunoHolder>
 
     private void editarItem(int position) {
         String id = Alunos.get(position).getRa();
-        Intent i = new Intent(context, ActivityAluno.class);
+        Intent i = new Intent(context, AlunoActivity.class);
         i.putExtra("id",id);
         context.startActivity(i);
     }
